@@ -11,13 +11,13 @@ public class Splash extends Activity {
 			private final int DURACION_SPLASH=2000;
 
 			/** Called when the activity is first created. */
-			    @Override
+			    
 			    public void onCreate(Bundle savedInstanceState) {
 			        super.onCreate(savedInstanceState);
 			        setContentView(R.layout.splash);
 			        
 			        new Handler().postDelayed(new Runnable(){
-			        	@Override
+			        	
 			        	public void run(){
 			        		// Pasados los 5 segundos inicia la activity
 			        		Intent intent=new Intent(Splash.this, Login.class);

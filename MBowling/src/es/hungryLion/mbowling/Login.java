@@ -13,7 +13,6 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 
 import android.app.Activity;
-import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -49,7 +48,7 @@ public class Login extends Activity {
 										// la primera vez que entra
 			btn.setOnClickListener(new OnClickListener() {
 
-				@Override
+				
 				public void onClick(View v) {
 					login(ed.getText().toString(), ed2.getText().toString()); // metodo
 																				// JSON
@@ -126,9 +125,7 @@ public class Login extends Activity {
 			finish();
 
 		}
-		// }else{
-
-		// }
+		
 	}
 
 	public void escribe(String tx) throws IOException { // metodo escribe
