@@ -120,7 +120,7 @@ public class Login extends Activity {
 				}
 			}
 
-			Intent a = new Intent(Login.this, Main.class);
+			Intent a = new Intent(Login.this, TransicionActivity.class);
 			startActivity(a);
 			finish();
 

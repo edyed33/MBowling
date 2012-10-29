@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package es.hungryLion.mbowling;
+package es.hungryLion.bowling;
 
 public final class R {
     public static final class attr {

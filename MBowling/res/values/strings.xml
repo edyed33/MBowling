@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MBowling</string>
+    <string name="Login">Log-in</string>
 </resources>
