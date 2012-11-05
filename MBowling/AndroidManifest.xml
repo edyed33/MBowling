@@ -29,6 +29,7 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity android:name=".VisualizarPistas" android:screenOrientation="portrait"/>
+        <activity android:name="anadirReserva"></activity>
     </application>
 
 </manifest>

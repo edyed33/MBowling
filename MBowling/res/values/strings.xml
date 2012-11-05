@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">MBowling</string>
     <string name="Login">Log-in</string>
+    <string name="Reservar">Reservar</string>
+    <string name="txtDia">Introduce el dia que quieras hacer la reserva</string>
+    <string name="txtPersonas">Introduce el numero de personas que jugareis</string>
+    <string name="Siguiente">Siguiente</string>
 </resources>
