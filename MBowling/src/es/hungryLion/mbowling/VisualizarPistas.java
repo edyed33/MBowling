@@ -1,5 +1,7 @@
 package es.hungryLion.mbowling;
 
+import java.io.UnsupportedEncodingException;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
@@ -14,9 +16,12 @@ import android.util.Log;
 //import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
+import android.widget.AdapterView.OnItemClickListener;
 
 /**
  * Esta clase muestra al usuario las pistas, se puede filtrar por libres o ocupadas
@@ -46,7 +51,7 @@ public class VisualizarPistas extends Activity {
 		
 		
 		//Estos setOnclickListener que ponen en null el Listview si esta lleno, y si no se cambia la variable X para pasar X parametro
-		Ver.setOnClickListener(new OnClickListener() {
+		/*Ver.setOnClickListener(new OnClickListener() {
 			public void onClick(View view) {				
 				if (ejecutado = true){
 					pista = null;
@@ -55,7 +60,7 @@ public class VisualizarPistas extends Activity {
 				x=1;
 				colocarList();
 			}
-		});	
+		});	*/
 	
 	Reservado.setOnClickListener(new OnClickListener() {
 		public void onClick(View view) {				
@@ -65,6 +70,7 @@ public class VisualizarPistas extends Activity {
 			}
 			x=2;
 			colocarList();
+			verReserva();
 		}
 	});	
 
@@ -118,9 +124,31 @@ private void colocarList(){
 	
 	}
 
-	/*@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.activity_main, menu);
-		return true;
-	}*/
+public void verReserva() {
+	lista.setOnItemClickListener(new OnItemClickListener() {
+
+		public void onItemClick(AdapterView<?> arg0, View arg1,
+				int posicion, long arg3) {
+			String pistaelejida;
+			pistaelejida = pista[posicion].toString();
+			
+			HttpGet peticion = new HttpGet("http://www.decatarroja.es/edyed33/WSDone/VerReservas.php/json/?seleccion=" + pistaelejida);
+			peticion.setHeader("content-type", "application/json");	
+			try {
+				HttpClient httpClient = new DefaultHttpClient();
+				HttpResponse resp = httpClient.execute(peticion);
+				String respStr = EntityUtils.toString(resp.getEntity());
+				
+				JSONArray resparray = new JSONArray(respStr);
+				JSONObject respJSON = resparray.getJSONObject(0);
+				String texto = respJSON.getString("FECHA_HORA");
+				Toast.makeText(VisualizarPistas.this, texto, Toast.LENGTH_LONG).show();
+			} catch (Exception ex) {
+				Log.e("ServicioRest", "Error!", ex);
+			}
+			
+						
+		}
+	});
+}
 }
