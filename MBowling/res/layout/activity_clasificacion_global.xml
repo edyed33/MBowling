@@ -1,0 +1,59 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/AGE"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="29dp"
+        android:text="@string/filterby" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="45dp"
+        android:text="BUSCAR" />
+
+    <RadioGroup
+        android:id="@+id/radiofiltro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="52dp"
+        android:layout_toRightOf="@+id/textView1" >
+
+        <RadioButton
+            android:id="@+id/radioage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/RadioAge" />
+
+        <RadioButton
+            android:id="@+id/radioname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/RadioName" />
+
+        <RadioButton
+            android:id="@+id/radiosex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/RadioSexo" />
+
+        <RadioButton
+            android:id="@+id/radioall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/generalranking" />
+    </RadioGroup>
+
+</RelativeLayout>
