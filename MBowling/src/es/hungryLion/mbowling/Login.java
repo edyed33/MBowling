@@ -13,7 +13,9 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,6 +30,8 @@ public class Login extends Activity {
 	public EditText ed;
 	public EditText ed2;
 	public Button btn;
+	public Button bExit;
+	
 	String dato;
 	String dni;
 	String cod;
@@ -42,6 +46,7 @@ public class Login extends Activity {
 		ed = (EditText) findViewById(R.id.editText1);
 		ed2 = (EditText) findViewById(R.id.editText2);
 		btn = (Button) findViewById(R.id.btnlogin);
+		bExit = (Button)findViewById(R.id.bSalir);
 		leer();
 
 		if (tmp == null || tmp == "") { // si leer es null quiere decir que es
@@ -64,6 +69,14 @@ public class Login extends Activity {
 					compruebaResultado();
 				}
 			});
+			
+			bExit.setOnClickListener(new OnClickListener() {
+				
+				public void onClick(View v) {
+					lanzarSalir(v);
+				}
+			});
+			
 		} else { // Lo que hace lo siguiente es dividir una cadena en dos ;)
 			String tempo = tmp;
 			String tokens[] = tempo.split(" "); // Divide las cadenas entre los
@@ -78,6 +91,42 @@ public class Login extends Activity {
 		}
 
 	}
+	
+	 public void lanzarSalir(View view){
+    	 //Creamos un objeto de la clase AlertDialog a través de la clase Builder:
+    	 AlertDialog.Builder dialogo1 = new AlertDialog.Builder(this); 
+    	 //Configuramos el título del diálogo:
+         dialogo1.setTitle("CIERRE DE LA APLICACION");
+         //Configuramos el mensaje del diálogo:
+         dialogo1.setMessage("ÀEsta seguro que quiere cerrar la aplicaci—n?");
+         //Evitamos que el diálogo sea salteado por cualquier medio distinto a presionar alguno de los dos botones:
+         dialogo1.setCancelable(false);  
+         //Llamamos al método setPositiveButton indicando el texto a mostrar en el botón y la clase anónima 
+         //que capturará el evento clic del botón:
+         dialogo1.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {  
+             public void onClick(DialogInterface dialogo1, int id) {  
+                 aceptar();  
+             }  
+         });
+         //De forma similar procedemos con el botón de cancelar:
+         dialogo1.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {  
+             public void onClick(DialogInterface dialogo1, int id) {  
+                 //cancelar();
+             }  
+         }); 
+         //Mostramos el diálogo:
+         dialogo1.show();        
+     }
+	 
+	//Definimos los métodos del Activity que se llamaran desde las clases anónimas:
+     public void aceptar() {
+    	 finish();
+     }
+     
+     public void cancelar() {
+    	       
+     }    	
+	
 
 	public void login(String deni, String contra) {
 

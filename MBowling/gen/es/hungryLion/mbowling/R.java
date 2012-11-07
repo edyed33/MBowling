@@ -29,19 +29,20 @@ public final class R {
         public static final int Reservadas=0x7f060001;
         public static final int Reservar=0x7f060002;
         public static final int TODAS=0x7f060000;
-        public static final int btnlogin=0x7f06000c;
-        public static final int button1=0x7f060010;
+        public static final int bSalir=0x7f06000c;
+        public static final int btnlogin=0x7f06000d;
+        public static final int button1=0x7f060011;
         public static final int clasifImg=0x7f060006;
-        public static final int datePicker1=0x7f06000e;
+        public static final int datePicker1=0x7f06000f;
         public static final int editText1=0x7f06000a;
         public static final int editText2=0x7f06000b;
-        public static final int imageView1=0x7f060011;
+        public static final int imageView1=0x7f060012;
         public static final int listView1=0x7f060009;
         public static final int logoutImg=0x7f060007;
         public static final int pistasImg=0x7f060008;
         public static final int rankingImg=0x7f060005;
-        public static final int textView1=0x7f06000d;
-        public static final int textView2=0x7f06000f;
+        public static final int textView1=0x7f06000e;
+        public static final int textView2=0x7f060010;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -54,6 +55,7 @@ public final class R {
     public static final class string {
         public static final int Login=0x7f040001;
         public static final int Reservar=0x7f040002;
+        public static final int Salir=0x7f040006;
         public static final int Siguiente=0x7f040005;
         public static final int app_name=0x7f040000;
         public static final int txtDia=0x7f040003;

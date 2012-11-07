@@ -5,4 +5,6 @@
     <string name="txtDia">Introduce el dia que quieras hacer la reserva</string>
     <string name="txtPersonas">Introduce el numero de personas que jugareis</string>
     <string name="Siguiente">Siguiente</string>
+        <string name="Salir">Salir</string>
+    
 </resources>
