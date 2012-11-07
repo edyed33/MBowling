@@ -1,5 +1,4 @@
 package es.hungryLion.mbowling;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.UnsupportedEncodingException;
@@ -28,7 +27,6 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
-
 
 public class anadirReserva extends Activity {
 
@@ -75,19 +73,32 @@ public class anadirReserva extends Activity {
 
 		btn.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				dia = dp.getYear() + "-" + (dp.getMonth() + 1) + "-"
-						+ dp.getDayOfMonth();
 
-				fIni = dia + ",13:00:00";
-				fFin = dia + ",23:59:00";
+				if (!pers.getText().toString().equalsIgnoreCase("")) {
 
-				personas = Integer.valueOf(pers.getText().toString());
+					dia = dp.getYear() + "-" + (dp.getMonth() + 1) + "-"
+							+ dp.getDayOfMonth();
 
-				DevuelveLibresJson();
-				try {
-					trataJson();
-				} catch (JSONException e) {
-					Log.e("Error trataJson", "Error", e);
+					fIni = dia + ",13:00:00";
+					fFin = dia + ",23:59:00";
+
+					personas = Integer.valueOf(pers.getText().toString());
+					if (personas <= 10 && personas >= 2) {
+						DevuelveLibresJson();
+
+						try {
+							trataJson();
+						} catch (JSONException e) {
+							Log.e("Error trataJson", "Error", e);
+						}
+					} else {
+						pers.setText("");
+						toast("Introduce un número de personas menor que 10 y mayor que 2");
+					}
+
+				} else {
+					pers.setText("");
+					toast("Introduce un número de personas");
 				}
 
 			}
@@ -409,7 +420,10 @@ public class anadirReserva extends Activity {
 
 	/**
 	 * Este método almacena las variables para realizar la reserva
-	 * @param pos - Devuelve al posicion del array donde están almacenadas las horas
+	 * 
+	 * @param pos
+	 *            - Devuelve al posicion del array donde están almacenadas las
+	 *            horas
 	 * @throws UnsupportedEncodingException
 	 */
 	public void leerArrayHoras(int pos) throws UnsupportedEncodingException {
@@ -428,6 +442,7 @@ public class anadirReserva extends Activity {
 
 	/**
 	 * Este método realiza la reserva
+	 * 
 	 * @throws UnsupportedEncodingException
 	 */
 	public void intrReservaJson() throws UnsupportedEncodingException {
@@ -465,6 +480,7 @@ public class anadirReserva extends Activity {
 
 	/**
 	 * lee el archivo de login.txt
+	 * 
 	 * @throws UnsupportedEncodingException
 	 */
 	public void leer() throws UnsupportedEncodingException {
