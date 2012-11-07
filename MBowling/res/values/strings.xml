@@ -5,6 +5,18 @@
     <string name="txtDia">Introduce el dia que quieras hacer la reserva</string>
     <string name="txtPersonas">Introduce el numero de personas que jugareis</string>
     <string name="Siguiente">Siguiente</string>
-        <string name="Salir">Salir</string>
+    <string name="Salir">Salir</string>
+    <!--MODIFICACIONES F.FERRANDO PARA CLASE "CLASIFICACIONGLOBAL" -->
+    <string name="title_activity_clasificacion_global">ClasificacionGlobal</string>
+    <string name="textname">Introduzca el Nombre</string>
+    <string name="NombreApellido">Nombre / Apellido</string>
+    <string name="RadioSexo">Sexo</string>
+    <string name="RadioAge">Edad</string>
+    <string name="RadioName">Nombre</string>
+    <string name="generalranking">Clasificación General</string>
+    <string name="filterby">Filtrar por</string>
+    <string name="agebetween">Introduzca el intervalo de edad</string>
+    <string name="back">Atras</string>
+    
     
 </resources>
