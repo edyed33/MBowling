@@ -36,11 +36,11 @@ public class TransicionActivity extends Activity {
 		clasif.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View arg0) {
-				/*
-				 * Intent i = new Intent
-				 * (getApplicationContext(),CLASECLASIFICACIONESActivity.class);
-				 * startActivity(i);
-				 */
+				
+				  Intent i = new Intent
+				  (getApplicationContext(),ClasificacionGlobal.class);
+				  startActivity(i);
+				 
 			}
 		});
 
