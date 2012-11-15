@@ -55,6 +55,7 @@ public class Login extends Activity {
 
 				
 				public void onClick(View v) {
+					btn.setClickable(false);
 					login(ed.getText().toString(), ed2.getText().toString()); // metodo
 																				// JSON
 																				// que
