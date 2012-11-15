@@ -30,6 +30,7 @@
             android:screenOrientation="portrait" />
         <activity android:name=".VisualizarPistas" android:screenOrientation="portrait"/>
         <activity android:name="anadirReserva"></activity>
+        <activity android:name="ClasificacionGlobal" android:clearTaskOnLaunch="true" android:launchMode="singleTask"></activity>
     </application>
 
 </manifest>
