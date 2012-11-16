@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical" >
+
+    <TextView
+        android:id="@+id/txtTituloRanking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="#C0C0C0"
+        android:gravity="center"
+        android:text="@string/tituloRanking"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/txtPuntuacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtTituloRanking"
+        android:gravity="center"
+        android:text="@string/Dia_Puntuacion"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#D60000"
+        android:textStyle="bold"
+        android:typeface="sans" />
+
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bExit"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtPuntuacion" >
+
+    </ListView>
+
+    <Button
+        android:id="@+id/bExit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/back" />
+
+</RelativeLayout>

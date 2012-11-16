@@ -17,6 +17,8 @@
     <string name="filterby">Filtrar por</string>
     <string name="agebetween">Introduzca el intervalo de edad</string>
     <string name="back">Atras</string>
+    <string name="tituloRanking">RANKING PERSONAL</string>
+    <string name="Dia_Puntuacion">PUNTUACIÓN &amp; FECHA &amp; HORA</string>
     
     
 </resources>

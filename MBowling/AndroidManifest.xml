@@ -31,6 +31,7 @@
         <activity android:name=".VisualizarPistas" android:screenOrientation="portrait"/>
         <activity android:name="anadirReserva"></activity>
         <activity android:name="ClasificacionGlobal" android:clearTaskOnLaunch="true" android:launchMode="singleTask"></activity>
+        <activity android:screenOrientation="portrait" android:name="RankingPersonal"></activity>
     </application>
 
 </manifest>
