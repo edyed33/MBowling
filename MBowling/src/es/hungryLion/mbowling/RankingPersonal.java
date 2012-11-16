@@ -37,6 +37,7 @@ public class RankingPersonal extends Activity {
 	private Button bSalirRanking;		//Referencia al botón volver del activity
 	//private ManejoFichero fichero;		//Referencia un objeto ManejoFichero, para poder utilizar 
 										//el método leer "fichero"
+	private ManejoFichero fichero;
 	
 
 	@Override
@@ -48,7 +49,6 @@ public class RankingPersonal extends Activity {
 	
 		bSalirRanking= (Button) findViewById(R.id.bExit);
 		//Cambia el color del botón volver
-		//bSalirRanking.getBackground().setColorFilter(0xD60000, PorterDuff.Mode.MULTIPLY);
 		
 		
 		//Listener del botón volver, que sirve para volver al activity anterior
@@ -60,9 +60,9 @@ public class RankingPersonal extends Activity {
 	     
 		// Recupera del fichero login.txt el cod_cliente asociado al DNI del usuario,
 		//para poder enviarlos al servicio como parámetro de entrada
-		/*fichero=new ManejoFichero();
-		fichero.leer();	*/	
-		String tmp=leer();
+		fichero=new ManejoFichero(this);
+		tmp = fichero.leer();
+		
 		//Devuelve en un array las palabras separadas por un espacio
 		String tokens[] = tmp.split(" ");
 		String codCliente = tokens[2];
@@ -176,30 +176,4 @@ public class RankingPersonal extends Activity {
 		}
 
 	}
-
-	public String leer() {
-		String tmp="";
-		FileInputStream fis = null;
-		try {
-			fis = openFileInput("login.txt");
-			byte[] reader = new byte[fis.available()];
-			while (fis.read(reader) != -1) {
-			}
-			tmp = new String(reader);			
-		} catch (FileNotFoundException e) {
-
-		} catch (Exception e) {
-
-		} finally {			
-			if (fis != null) {
-				try {
-					fis.close();
-				} catch (Exception e) {
-
-				}
-			}
-		}
-		return tmp;
-	}
-
 }
