@@ -21,6 +21,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -37,12 +38,13 @@ public class Login extends Activity {
 	String cod;
 	String tmp;
 	boolean rec = false;
-
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.login);
-
+		
 		ed = (EditText) findViewById(R.id.editText1);
 		ed2 = (EditText) findViewById(R.id.editText2);
 		btn = (Button) findViewById(R.id.btnlogin);
@@ -67,7 +69,6 @@ public class Login extends Activity {
 																				// datos
 
 					
-					compruebaResultado();
 				}
 			});
 			
@@ -84,11 +85,11 @@ public class Login extends Activity {
 												// espacios que haya
 			String varDNI = tokens[0];
 			String varContra = tokens[1];
-
+			
+			
 			rec = true;
 
 			login(varDNI, varContra);
-			compruebaResultado();
 		}
 
 	}
@@ -99,7 +100,7 @@ public class Login extends Activity {
     	 //Configuramos el título del diálogo:
          dialogo1.setTitle("CIERRE DE LA APLICACION");
          //Configuramos el mensaje del diálogo:
-         dialogo1.setMessage("ÀEsta seguro que quiere cerrar la aplicaci—n?");
+         dialogo1.setMessage("Esta seguro que quiere cerrar la aplicación?");
          //Evitamos que el diálogo sea salteado por cualquier medio distinto a presionar alguno de los dos botones:
          dialogo1.setCancelable(false);  
          //Llamamos al método setPositiveButton indicando el texto a mostrar en el botón y la clase anónima 
@@ -123,10 +124,6 @@ public class Login extends Activity {
      public void aceptar() {
     	 finish();
      }
-     
-     public void cancelar() {
-    	       
-     }    	
 	
 
 	public void login(String deni, String contra) {
@@ -148,7 +145,7 @@ public class Login extends Activity {
 		} catch (Exception ex) {
 			Log.e("ServicioRest", "Error!", ex);
 		}
-
+		compruebaResultado();
 	}
 
 	public void compruebaResultado() { // comprueba si los datos coinciden
@@ -164,7 +161,7 @@ public class Login extends Activity {
 			if (rec == false) {
 				try { // escribe en un archivo el DNI y la contraseña
 					escribe(ed.getText().toString() + " "
-							+ ed2.getText().toString() + " " + cod);
+							+ (ed2.getText().toString()) + " " + cod);
 				} catch (IOException e) {
 					Log.e("Error", "Error en escribe", e);
 				}
