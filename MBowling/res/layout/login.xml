@@ -4,42 +4,90 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:maxLength="9"
-        android:inputType="text" >
-
-        <requestFocus />
-    </EditText>
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword" />
-
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        android:background="@drawable/bolera1" >
 
-        <Button
-            android:id="@+id/bSalir"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:text="@string/Salir" />
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:inputType="textPassword"
+            android:lines="1" >
+
+            <requestFocus />
+        </EditText>
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/editText2"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="53dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:inputType="text"
+            android:lines="1"
+            android:maxLength="9"/>
 
         <Button
             android:id="@+id/btnlogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/editText2"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginTop="60dp"
             android:clickable="true"
             android:text="@string/Login" />
+
+        <Button
+            android:id="@+id/bSalir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/btnlogin"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginTop="27dp"
+            android:text="@string/Salir" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/editText1"
+            android:layout_alignLeft="@+id/editText1"
+            android:text="@string/LoginDNI"
+            android:textAppearance="?android:attr/textAppearanceSmall" android:textColor="#FFFFFF"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/editText2"
+            android:layout_alignLeft="@+id/editText2"
+            android:text="@string/LoginContrasena"
+            android:textAppearance="?android:attr/textAppearanceSmall" android:textColor="#FFFFFF"/>
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="34dp"
+            android:text="@string/Titulo"
+            android:textAppearance="?android:attr/textAppearanceLarge" android:typeface="serif" android:textColor="#FFFFFF" android:textSize="50dp"/>
 
     </RelativeLayout>
 

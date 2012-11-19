@@ -17,6 +17,9 @@
     <string name="filterby">Filtrar por</string>
     <string name="agebetween">Introduzca el intervalo de edad</string>
     <string name="back">Atras</string>
+    <string name="LoginDNI">Dni:</string>
+    <string name="LoginContrasena">Contraseña:</string>
+    <string name="Titulo">Bowling</string>
     
     
 </resources>
