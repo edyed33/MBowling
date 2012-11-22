@@ -47,11 +47,8 @@ public class TransicionActivity extends Activity {
 		rankingImg.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View arg0) {
-				/*
-				 * Intent i = new Intent
-				 * (getApplicationContext(),CLASERANKINGActivity.class);
-				 * startActivity(i);
-				 */
+				 Intent i = new Intent(getApplicationContext(),RankingPersonal.class);
+				 startActivity(i);
 			}
 		});
 
