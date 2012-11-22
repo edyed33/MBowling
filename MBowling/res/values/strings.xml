@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MBowling</string>
+    <string name="app_name">Bowling</string>
     <string name="Login">Log-in</string>
     <string name="Reservar">Reservar</string>
     <string name="txtDia">Introduce el dia que quieras hacer la reserva</string>
@@ -20,6 +20,8 @@
     <string name="LoginDNI">Dni:</string>
     <string name="LoginContrasena">Contraseña:</string>
     <string name="Titulo">Bowling</string>
+    <string name="tituloRanking">RANKING PERSONAL</string>
+    <string name="Dia_Puntuacion">PUNTUACIÓN &amp; FECHA &amp; HORA</string>    
     
     
 </resources>
